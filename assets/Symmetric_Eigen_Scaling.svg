@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233f"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d62728"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f5fbf"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e8b57"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8e44ad"/>
+    </marker>
+  </defs>
+
+  <rect width="500" height="500" fill="#ffffff"/>
+
+  <!-- axes (1 unit = 100 px, origin at 250,250) -->
+  <g stroke="#c8ced8" stroke-width="1.5">
+    <line x1="30" y1="250" x2="470" y2="250"/>
+    <line x1="250" y1="30" x2="250" y2="455"/>
+  </g>
+
+  <!-- eigen directions -->
+  <g stroke="#9aa4b2" stroke-width="1.5" stroke-dasharray="6 6">
+    <line x1="59.5" y1="360" x2="440.5" y2="140"/>
+    <line x1="352" y1="426.7" x2="140" y2="59.5"/>
+  </g>
+
+  <!-- v1 direction: lambda1 = 2 (scaled drawn first, it is longer) -->
+  <line x1="250" y1="250" x2="423.2" y2="150" stroke="#d62728" stroke-width="5" marker-end="url(#arrow-red)"/>
+  <line x1="250" y1="250" x2="336.6" y2="200" stroke="#10233f" stroke-width="2.5" marker-end="url(#arrow-black)"/>
+
+  <!-- v2 direction: lambda2 = 1/2 (original drawn first, it is longer) -->
+  <line x1="250" y1="250" x2="200" y2="163.4" stroke="#10233f" stroke-width="2.5" marker-end="url(#arrow-black)"/>
+  <line x1="250" y1="250" x2="225" y2="206.7" stroke="#1f5fbf" stroke-width="5" marker-end="url(#arrow-blue)"/>
+
+  <!-- non-eigenvector u = 0.6 v1 - 1.2 v2, Lu = 1.2 v1 - 0.6 v2 (direction changes) -->
+  <line x1="250" y1="250" x2="433.7" y2="371.2" stroke="#2e8b57" stroke-width="1.5" stroke-dasharray="3 5"/>
+  <line x1="250" y1="250" x2="362" y2="323.9" stroke="#2e8b57" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <line x1="250" y1="250" x2="383.9" y2="242" stroke="#8e44ad" stroke-width="5" marker-end="url(#arrow-purple)"/>
+
+  <circle cx="250" cy="250" r="3.5" fill="#10233f"/>
+
+  <!-- labels -->
+  <g font-size="20">
+    <text x="318" y="228" fill="#10233f" font-weight="bold">v<tspan font-size="14" dy="5">1</tspan></text>
+    <text x="398" y="130" fill="#d62728">L<tspan font-weight="bold">v</tspan><tspan font-size="14" dy="5">1</tspan><tspan dy="-5"> = 2</tspan><tspan font-weight="bold">v</tspan><tspan font-size="14" dy="5">1</tspan></text>
+    <text x="168" y="150" fill="#10233f" font-weight="bold">v<tspan font-size="14" dy="5">2</tspan></text>
+    <text x="100" y="222" fill="#1f5fbf">L<tspan font-weight="bold">v</tspan><tspan font-size="14" dy="5">2</tspan><tspan dy="-5"> = ½</tspan><tspan font-weight="bold">v</tspan><tspan font-size="14" dy="5">2</tspan></text>
+    <text x="330" y="350" fill="#2e8b57" font-weight="bold">u</text>
+    <text x="392" y="236" fill="#8e44ad">L<tspan font-weight="bold">u</tspan> ≠ λ<tspan font-weight="bold">u</tspan></text>
+  </g>
+
+  <text x="250" y="476" font-size="15" fill="#4a5568" text-anchor="middle">Eigenvectors are only scaled by L;</text>
+  <text x="250" y="494" font-size="15" fill="#4a5568" text-anchor="middle">a non-eigenvector u is also turned off its line</text>
+</svg>
